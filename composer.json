@@ -1,0 +1,17 @@
+{
+    "name": "alamirault/expression",
+    "require": {
+        "symfony/expression-language": "^4.2",
+        "symfony/var-dumper": "^4.2",
+        "wouterj/peg": "dev-master"
+    },
+    "autoload": {
+        "psr-4": { "Alamirault\\Grammar\\": "src/" }
+    },
+    "authors": [
+        {
+            "name": "Antoine Lamirault",
+            "email": "lamiraultantoine@gmail.com"
+        }
+    ]
+}
