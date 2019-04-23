@@ -19,7 +19,6 @@ class Definition
 
     /**
      * @param string        $id
-     * @param array         $rule
      * @param null|callable $action Transforms the result to a custom value
      */
     public function __construct($id, $rule, $action = null)

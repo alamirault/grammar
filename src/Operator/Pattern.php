@@ -12,7 +12,7 @@ namespace Alamirault\Grammar\Operator;
 use Alamirault\Grammar\Parser;
 use Alamirault\Grammar\Result;
 
-class Character implements OperatorInterface
+class Pattern implements OperatorInterface
 {
     /**
      * @var string
@@ -22,6 +22,7 @@ class Character implements OperatorInterface
 
     /**
      * Character constructor.
+     * @param string $regex
      */
     public function __construct(string $regex)
     {
@@ -29,9 +30,8 @@ class Character implements OperatorInterface
     }
 
     public function find(Parser $parser, $input, $offset){
-        $regex = '{^['.$this->regex.']}';
 
-        if (preg_match($regex, substr($input, $offset), $match)) {
+        if (preg_match('{' . $this->regex . '}', substr($input, $offset), $match)) {
             return Result::match(1, $match[0], $offset);
         }
 

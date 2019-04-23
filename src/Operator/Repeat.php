@@ -30,6 +30,9 @@ class Repeat implements OperatorInterface
 
     /**
      * Repeat constructor.
+     * @param OperatorInterface $operatorToRepeat
+     * @param int $min
+     * @param $max
      */
     public function __construct(OperatorInterface $operatorToRepeat, int $min = 0, $max = INF)
     {
@@ -61,6 +64,6 @@ class Repeat implements OperatorInterface
             $matchLen += $result->length();
         }
 
-        return Result::match($matchLen, $matches, $_offset);
+        return empty($matches) ? Result::noMatch($_offset) : Result::match($matchLen, $matches, $_offset);
     }
 }
