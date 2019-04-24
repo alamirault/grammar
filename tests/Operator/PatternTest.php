@@ -28,6 +28,15 @@ class PatternTest extends TestCase
         $this->assertFalse($parser->parse('Digit', 'a')->isMatch());
     }
 
+    public function testPatternInMiddle()
+    {
+        $parser = new Parser([
+            new Definition('Digit', new Pattern('[0-9]')),
+        ]);
+
+        $this->assertFalse($parser->parse('Digit', 'a9a')->isMatch());
+    }
+
     public function testComplexPattern()
     {
         $parser = new Parser([

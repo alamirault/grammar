@@ -42,6 +42,7 @@ class AndOperator implements OperatorInterface
                 return Result::noMatch($_offset);
             }
 
+
             $offset = $result->newOffset();
             $matches[] = $result->value();
             $matchLen += $result->length();

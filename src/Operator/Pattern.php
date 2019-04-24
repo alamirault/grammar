@@ -29,9 +29,10 @@ class Pattern implements OperatorInterface
         $this->regex = $regex;
     }
 
-    public function find(Parser $parser, $input, $offset){
+    public function find(Parser $parser, $input, $offset)
+    {
 
-        if (preg_match('{' . $this->regex . '}', substr($input, $offset), $match)) {
+        if (preg_match('{^' . $this->regex . '}', substr($input, $offset), $match)) {
             return Result::match(1, $match[0], $offset);
         }
 
