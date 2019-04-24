@@ -2,7 +2,7 @@
 
 This package allows you to write Grammar in PHP OOP.
 
-#Installation
+# Installation
 
 Install PHP grammar parser using [Composer](https://getcomposer.org/download/):
 
@@ -12,7 +12,7 @@ composer require alamirault/grammar
 
 Or add the package to your `composer.json`
 
-```json
+```javascript
 require: {
     // ...
     "alamirault/grammar": "~1.0" // check packagist.org for more tags
